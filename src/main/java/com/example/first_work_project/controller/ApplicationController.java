@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
 @Controller
@@ -27,6 +28,7 @@ public class ApplicationController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<String> save(@RequestBody Application application) {
+        System.out.println(application);
         applicationService.save(application);
         return new ResponseEntity<>(HttpStatus.OK);
     }

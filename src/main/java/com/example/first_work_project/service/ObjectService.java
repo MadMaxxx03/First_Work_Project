@@ -1,4 +1,4 @@
 package com.example.first_work_project.service;
 
-public class Knowledge_baseServiceImpl {
+public interface ObjectService {
 }

@@ -8,19 +8,73 @@ import java.sql.Timestamp;
 public class User {
 
     @Id
-    @Column
-    private int user_id;
+    @Column(name = "user_id")
+    private int userId;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "application_id")
     private Application application;
 
-    @Column
-    private boolean delete_as_soon_as_possible;
+    @Column(name = "delete_as_soon_as_possible")
+    private boolean deleteAsSoonAsPossible;
 
-    @Column
-    private Timestamp will_be_deleted_after;
+    @Column(name = "will_be_deleted_after")
+    private Timestamp willBeDeletedAfter;
 
-    @Column
-    private Timestamp date_of_creation;
+    @Column(name = "date_of_creation")
+    private Timestamp dateOfCreation;
+
+    public User() {
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public Application getApplication() {
+        return application;
+    }
+
+    public void setApplication(Application application) {
+        this.application = application;
+    }
+
+    public boolean isDeleteAsSoonAsPossible() {
+        return deleteAsSoonAsPossible;
+    }
+
+    public void setDeleteAsSoonAsPossible(boolean deleteAsSoonAsPossible) {
+        this.deleteAsSoonAsPossible = deleteAsSoonAsPossible;
+    }
+
+    public Timestamp getWillBeDeletedAfter() {
+        return willBeDeletedAfter;
+    }
+
+    public void setWillBeDeletedAfter(Timestamp willBeDeletedAfter) {
+        this.willBeDeletedAfter = willBeDeletedAfter;
+    }
+
+    public Timestamp getDateOfCreation() {
+        return dateOfCreation;
+    }
+
+    public void setDateOfCreation(Timestamp dateOfCreation) {
+        this.dateOfCreation = dateOfCreation;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", application=" + application +
+                ", deleteAsSoonAsPossible=" + deleteAsSoonAsPossible +
+                ", willBeDeletedAfter=" + willBeDeletedAfter +
+                ", dateOfCreation=" + dateOfCreation +
+                '}';
+    }
 }

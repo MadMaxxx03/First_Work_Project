@@ -9,14 +9,14 @@ import java.util.Set;
 public class Application {
 
     @Id
-    @Column
-    private int application_id;
+    @Column(name = "application_id")
+    private int applicationId;
 
-    @Column
-    private int kb_amount_limit;
+    @Column(name = "kb_amount_limit")
+    private int kbAmountLimit;
 
-    @Column
-    private int user_amount_limit;
+    @Column(name = "user_amount_limit")
+    private int userAmountLimit;
 
     @Column
     private String token;
@@ -30,12 +30,111 @@ public class Application {
     @Column
     private String salt;
 
-    @Column
-    private boolean has_access;
+    @Column(name = "has_access")
+    private boolean hasAccess;
 
-    @Column
-    private Timestamp date_of_expiration;
+    @Column(name = "date_of_expiration")
+    private Timestamp dateOfExpiration;
 
     @OneToMany(mappedBy = "application", fetch = FetchType.LAZY)
     private Set<User> users;
+
+    public Application() {
+    }
+
+    public int getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(int applicationId) {
+        this.applicationId = applicationId;
+    }
+
+    public int getKbAmountLimit() {
+        return kbAmountLimit;
+    }
+
+    public void setKbAmountLimit(int kbAmountLimit) {
+        this.kbAmountLimit = kbAmountLimit;
+    }
+
+    public int getUserAmountLimit() {
+        return userAmountLimit;
+    }
+
+    public void setUserAmountLimit(int userAmountLimit) {
+        this.userAmountLimit = userAmountLimit;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public boolean isHasAccess() {
+        return hasAccess;
+    }
+
+    public void setHasAccess(boolean hasAccess) {
+        this.hasAccess = hasAccess;
+    }
+
+    public Timestamp getDateOfExpiration() {
+        return dateOfExpiration;
+    }
+
+    public void setDateOfExpiration(Timestamp dateOfExpiration) {
+        this.dateOfExpiration = dateOfExpiration;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        return "Application{" +
+                "applicationId=" + applicationId +
+                ", kbAmountLimit=" + kbAmountLimit +
+                ", userAmountLimit=" + userAmountLimit +
+                ", token='" + token + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", hasAccess=" + hasAccess +
+                ", dateOfExpiration=" + dateOfExpiration +
+                ", users=" + users +
+                '}';
+    }
 }
