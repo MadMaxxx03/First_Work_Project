@@ -9,10 +9,11 @@ public class User {
 
     @Id
     @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "application_id")
+    @ManyToOne
+    @JoinColumn(name = "application_id", nullable = false)
     private Application application;
 
     @Column(name = "delete_as_soon_as_possible")

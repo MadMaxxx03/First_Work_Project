@@ -1,4 +1,6 @@
 package com.example.first_work_project.service;
 
-public interface ObjectService {
+import com.example.first_work_project.classes.Object;
+
+public interface ObjectService extends GeneralService<Object> {
 }

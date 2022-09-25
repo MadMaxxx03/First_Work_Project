@@ -1,9 +1,6 @@
 package com.example.first_work_project.classes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigInteger;
 
 @Entity
@@ -11,30 +8,31 @@ import java.math.BigInteger;
 public class Object {
 
     @Id
-    @Column
-    private int object_id;
+    @Column(name = "object_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int objectId;
 
-    @Column
-    private String object_name;
+    @Column(name = "object_name")
+    private String objectName;
 
-    @Column
-    private int object_node_type;
+    @Column(name = "object_node_type")
+    private int objectNodeType;
 
-    @Column
-    private boolean is_deleted;
+    @Column(name = "is_deleted")
+    private boolean isDeleted;
 
     @Column
     private String description;
 
-    @Column
-    private boolean is_full_event;
+    @Column(name = "is_full_event")
+    private boolean isFullEvent;
 
-    @Column
-    private int current_version;
+    @Column(name = "current_version")
+    private int currentVersion;
 
-    @Column
-    private int previous_version;
+    @Column(name = "previous_version")
+    private int previousVersion;
 
-    @Column
-    private Long first_version;
+    @Column(name = "first_version")
+    private Long firstVersion;
 }

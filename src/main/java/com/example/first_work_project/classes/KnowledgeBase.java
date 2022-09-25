@@ -1,9 +1,6 @@
 package com.example.first_work_project.classes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
@@ -12,6 +9,7 @@ public class KnowledgeBase {
 
     @Id
     @Column(name = "kb_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int kbId;
 
     @Column(name = "kb_name", length =  128)

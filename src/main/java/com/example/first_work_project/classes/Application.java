@@ -10,6 +10,7 @@ public class Application {
 
     @Id
     @Column(name = "application_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int applicationId;
 
     @Column(name = "kb_amount_limit")

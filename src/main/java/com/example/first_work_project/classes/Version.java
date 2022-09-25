@@ -1,9 +1,6 @@
 package com.example.first_work_project.classes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Timestamp;
 
@@ -12,14 +9,15 @@ import java.sql.Timestamp;
 public class Version {
 
     @Id
-    @Column
-    private BigInteger version_id;
+    @Column(name = "version_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private BigInteger versionId;
 
-    @Column
-    private int kb_id;
+    @Column(name = "kb_id")
+    private int kbId;
 
-    @Column
-    private int user_id;
+    @Column(name = "user_id")
+    private int userId;
 
     //@Column
     //private TableNameType table_name; ?
@@ -27,9 +25,9 @@ public class Version {
     //@Column
     //private ActionType action; ?
 
-    @Column
-    private Timestamp registration_date;
+    @Column(name = "registration_date")
+    private Timestamp registrationDate;
 
-    @Column
-    private int previous_version_id;
+    @Column(name = "previous_version_id")
+    private int previousVersionId;
 }
