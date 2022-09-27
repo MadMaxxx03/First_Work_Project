@@ -5,7 +5,6 @@ import com.example.first_work_project.repository.ApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.OneToMany;
 import java.util.List;
 
 @Service

@@ -15,8 +15,7 @@ public class KnowledgeBase {
     @Column(name = "kb_name", length =  128)
     private String kbName;
 
-    @Column
-    private int modified_by_user___;
+    // modified_by_user
 
     @Column(name = "date_of_modification")
     private Timestamp dateOfModification;
@@ -29,9 +28,9 @@ public class KnowledgeBase {
 
     @Column
     private String description;
+    //Text
 
-    @Column
-    private int createdByUser___;
+    // created_by_user
 
     @Column(name = "date_of_creation")
     private Timestamp dateOfCreation;
