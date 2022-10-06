@@ -34,4 +34,5 @@ public class KnowledgeBase {
 
     @Column(name = "date_of_creation")
     private Timestamp dateOfCreation;
+
 }

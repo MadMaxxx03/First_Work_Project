@@ -8,26 +8,40 @@ import java.sql.Timestamp;
 @Table(name = "versions")
 public class Version {
 
+    enum TableNameType{
+        knowledge_bases,
+        sections,
+        object_types,
+        objects,
+        object_sections,
+        object_connections,
+        attributes,
+        object_attributes
+    }
+
+    enum ActionType{
+        create,
+        update,
+        delete
+    }
+
     @Id
     @Column(name = "version_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger versionId;
+    private Long versionId;
 
-    @Column(name = "kb_id")
-    private int kbId;
+    //kb_id
 
-    @Column(name = "user_id")
-    private int userId;
+    //user_id
 
-    //@Column
-    //private TableNameType table_name; ?
+    @Column(name = "table_name")
+    private TableNameType tableName;
 
-    //@Column
-    //private ActionType action; ?
+    @Column
+    private ActionType action;
 
     @Column(name = "registration_date")
     private Timestamp registrationDate;
 
-    @Column(name = "previous_version_id")
-    private int previousVersionId;
+    //previous_version_id
 }

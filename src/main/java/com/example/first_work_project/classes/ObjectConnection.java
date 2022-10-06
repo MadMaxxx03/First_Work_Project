@@ -6,6 +6,14 @@ import javax.persistence.*;
 @Table(name = "object_connections")
 public class ObjectConnection {
 
+    enum ObjectConnectionType{
+        RS,
+        TRA,
+        S,
+        SN,
+        ART
+    }
+
     @Id
     @Column(name = "object_connection_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,8 +23,8 @@ public class ObjectConnection {
 
     //to_object
 
-    //@Column(name = "connection_type")
-    //private object_connection_type connectionType;
+    @Column(name = "connection_type")
+    private ObjectConnectionType connectionType;
 
     @Column(name = "is_deleted")
     private boolean isDeleted;

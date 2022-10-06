@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.criteria.CriteriaBuilder;
 
 @Repository
-public interface VersionRepository extends JpaRepository<Version, Integer> {
+public interface VersionRepository extends JpaRepository<Version, Long> {
 }
